@@ -1,3 +1,5 @@
+"""Almacena la clase que define los grupos de alimentos
+"""
 from enum import Enum
 
 

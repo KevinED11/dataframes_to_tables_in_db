@@ -1,6 +1,6 @@
-import pandas as pd
-
-
+"""
+Modulo prinipal
+"""
 from sqlite3 import Connection
 
 
@@ -8,12 +8,16 @@ from db.conn import conn
 from dataframes import obtener_archivo_excel, obtener_nombres_hojas_excel, obtener_nombres_tabla, obtener_dataframes, dataframes_a_sql
 
 
+import pandas as pd
+
+
 def main():
-    connection: Connection = conn
+    """Ejecuta todo el programa
+    """
+    connection: Connection = conn()
 
     archivo: pd.ExcelFile = obtener_archivo_excel(
         ruta_archivo="SMAE/SMAE-2014-EN-EXCEL.xlsx")
-    
     hojas: list[str] = obtener_nombres_hojas_excel()
 
     nombres_de_tablas: list[str] = obtener_nombres_tabla()
